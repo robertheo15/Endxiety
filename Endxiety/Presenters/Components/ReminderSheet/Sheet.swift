@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import UserNotifications
+
 
 struct Sheet: View {
     @State private var isReminderEnabled = false
@@ -15,25 +17,31 @@ struct Sheet: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Daily Reminder")) {
+                Section(header: Text("")) {
                     Toggle(isOn: $isReminderEnabled) {
                         HStack {
                             Image(systemName: "alarm.fill")
                                 .foregroundColor(.orange)
                             Text("Daily Reminder")
+                        }.onAppear() {
+                            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                                if success {
+                                    print("All set!")
+                                } else if let error {
+                                    print(error.localizedDescription)
+                                }
+                            }
                         }
                         
                     }
 
                     if isReminderEnabled {
                         DatePicker("Reminds Me At", selection: $reminderTime, displayedComponents: .hourAndMinute)
-                            .datePickerStyle(WheelDatePickerStyle())
                     }
                 }
             }
             .navigationBarTitle("Daily Reminder")
             .navigationBarItems(trailing: Button("Done") {
-                
                 print("halo!")
 
                 // Add any actions to perform when done
@@ -44,8 +52,9 @@ struct Sheet: View {
 
 
                 var dateComponents = DateComponents()
-                dateComponents.hour = 22   // 8 AM
-                dateComponents.minute = 45 // 0 minutes
+                let dateTrigger = Calendar.current.dateComponents([.hour, .minute], from: reminderTime)
+                dateComponents.hour = dateTrigger.hour
+                dateComponents.minute = dateTrigger.minute
 
                 let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
 
@@ -53,10 +62,7 @@ struct Sheet: View {
 
                 UNUserNotificationCenter.current().add(request)
                 print("notification set!")
-                let test = Calendar.current.dateComponents([.hour, .minute], from: reminderTime)
-                print(test.hour)
-                print(test.minute)
-                
+            
             })
         }
     }
