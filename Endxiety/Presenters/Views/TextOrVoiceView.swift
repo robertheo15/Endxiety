@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct TextOrVoiceView: View {
+    
+    @State var selectedNote: Note = Note(content: "")
+    
     var body: some View {
         VStack{
             NavigationLink{
-                NoteView()
+                NoteView(note:$selectedNote)
             } label: {
                 Image(systemName: "note.text")
                     .font(.largeTitle)

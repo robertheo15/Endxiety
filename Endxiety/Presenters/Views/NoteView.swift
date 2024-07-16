@@ -5,10 +5,24 @@
 //  Created by Ali Haidar on 11/07/24.
 //
 
+extension View {
+    @ViewBuilder public func hidden (_ shouldHide: Bool) ->
+    some View {
+        switch shouldHide {
+        case true: self.hidden()
+        case false: self
+        }
+    }
+}
+
 import SwiftUI
 
 struct NoteView: View {
     @State private var notes: NSMutableAttributedString = NSMutableAttributedString(string: "")
+    @Binding var note: Note
+    @FocusState private var isDescriptionFocused: Bool
+    @Environment(\.modelContext) var context
+    @Environment(\.dismiss) private var dismiss
     
     @FocusState var keyboardFocused
     var body: some View {
@@ -101,5 +115,5 @@ struct NoteView: View {
 }
 
 #Preview {
-    NoteView()
+    NoteView(note: .constant(Note(content: "", editedAt: Date())))
 }

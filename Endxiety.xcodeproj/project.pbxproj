@@ -33,6 +33,9 @@
 		0E01DA452C466BED00AD41FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E01DA442C466BED00AD41FE /* Assets.xcassets */; };
 		0E01DA472C466CA100AD41FE /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA462C466CA100AD41FE /* Recording.swift */; };
 		0E01DA4A2C4670D000AD41FE /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA492C4670D000AD41FE /* Sheet.swift */; };
+		4682C1FD2C46897D00C4FF35 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4682C1FC2C46897D00C4FF35 /* Note.swift */; };
+		4682C1FF2C4689CA00C4FF35 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4682C1FE2C4689CA00C4FF35 /* NoteViewModel.swift */; };
+		4682C2012C468AF400C4FF35 /* NoteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4682C2002C468AF400C4FF35 /* NoteRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,9 @@
 		0E01DA442C466BED00AD41FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../NoteApp/NoteApp/NoteApp/Assets.xcassets; sourceTree = "<group>"; };
 		0E01DA462C466CA100AD41FE /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		0E01DA492C4670D000AD41FE /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
+		4682C1FC2C46897D00C4FF35 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		4682C1FE2C4689CA00C4FF35 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		4682C2002C468AF400C4FF35 /* NoteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				0E01DA0E2C466BE300AD41FE /* VoiceViewModel.swift */,
+				4682C1FE2C4689CA00C4FF35 /* NoteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -127,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				0E01DA462C466CA100AD41FE /* Recording.swift */,
+				4682C1FC2C46897D00C4FF35 /* Note.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,6 +195,7 @@
 				0E01DA232C466BE300AD41FE /* HomeView.swift */,
 				0E01DA242C466BE300AD41FE /* MainView.swift */,
 				0E01DA252C466BE300AD41FE /* NoteView.swift */,
+				4682C2002C468AF400C4FF35 /* NoteRowView.swift */,
 				0E01DA262C466BE300AD41FE /* QuoteView.swift */,
 				0E01DA272C466BE300AD41FE /* SettingsView.swift */,
 				0E01DA282C466BE300AD41FE /* TextOrVoiceView.swift */,
@@ -295,9 +304,12 @@
 				0E01DA372C466BE300AD41FE /* convertSecToMinAndHour.swift in Sources */,
 				0E01DA3F2C466BE300AD41FE /* QuoteView.swift in Sources */,
 				0E01DA4A2C4670D000AD41FE /* Sheet.swift in Sources */,
+				4682C1FD2C46897D00C4FF35 /* Note.swift in Sources */,
 				0E01DA422C466BE300AD41FE /* TrendsView.swift in Sources */,
+				4682C2012C468AF400C4FF35 /* NoteRowView.swift in Sources */,
 				0E01DA472C466CA100AD41FE /* Recording.swift in Sources */,
 				0E01DA352C466BE300AD41FE /* ListeningSiriAnimation.swift in Sources */,
+				4682C1FF2C4689CA00C4FF35 /* NoteViewModel.swift in Sources */,
 				0E01DA432C466BE300AD41FE /* VoiceRecordView.swift in Sources */,
 				0E01DA002C466B5800AD41FE /* EndxietyApp.swift in Sources */,
 				0E01DA3E2C466BE300AD41FE /* NoteView.swift in Sources */,
@@ -440,7 +452,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Endxiety/Preview Content\"";
-				DEVELOPMENT_TEAM = 5KGT723N95;
+				DEVELOPMENT_TEAM = 5H49J96R9T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -469,7 +481,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Endxiety/Preview Content\"";
-				DEVELOPMENT_TEAM = 5KGT723N95;
+				DEVELOPMENT_TEAM = 5H49J96R9T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

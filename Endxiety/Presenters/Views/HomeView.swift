@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
     @State var isEmpty = true
     @State private var showReminderSheet = false
+    @Query(sort: \Note.editedAt) var swiftDateNotes: [Note]
+    @State var selectedNote: Note = Note(content: "")
+    @Environment(\.modelContext) var context
+    @State private var navigateToNewNote = false
 
     let dates = (0..<8).map { index in
         let date = Date().addingTimeInterval(-Double(index) * 24 * 60 * 60)
@@ -21,7 +26,6 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                
                 ScrollView(.horizontal){
                     HStack{
                         ForEach(dates, id: \.0) { (date, formattedDate, dayOfWeek) in
