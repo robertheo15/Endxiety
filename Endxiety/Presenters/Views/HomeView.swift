@@ -9,7 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     @State var isEmpty = true
-    
+    @State private var showReminderSheet = false
+
     let dates = (0..<8).map { index in
         let date = Date().addingTimeInterval(-Double(index) * 24 * 60 * 60)
         let formattedDate = date.formatted(date: .abbreviated, time: .omitted)
@@ -18,8 +19,8 @@ struct HomeView: View {
     }
     
     var body: some View {
-        NavigationStack{
-            VStack{
+        NavigationStack {
+            VStack {
                 
                 ScrollView(.horizontal){
                     HStack{
@@ -37,18 +38,31 @@ struct HomeView: View {
                 .scrollIndicators(.hidden)
                 
             }
-            .navigationTitle(LocalizedStringKey("My Notes"))
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        // Action for refresh button
-                    }) {
-                        Image(systemName: "clock.badge")
-                            .foregroundColor(.primaryBlue)
-                    }.offset(CGSize(width: 0.0, height: 40.0))
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Text(LocalizedStringKey("My Notes"))
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Spacer()
+                        Button(action: {
+                            // Action for refresh button
+                            showReminderSheet.toggle()
+                            print("halo")
+                        }) {
+                            Image(systemName: "clock.badge")
+                                .foregroundColor(.blue)
+                        }
+                        .sheet(isPresented: $showReminderSheet) {
+                            VStack {
+                                Sheet()
+                            }
+                        }
+                    }
                 }
             }
-        }
+        }.scenePadding(.top)
     }
 }
 
