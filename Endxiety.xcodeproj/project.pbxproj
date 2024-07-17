@@ -82,6 +82,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		030662522C478FFC00B0FD98 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		034DECC02C47408700D2433F /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +117,7 @@
 		0E01D9FE2C466B5800AD41FE /* Endxiety */ = {
 			isa = PBXGroup;
 			children = (
+				030662522C478FFC00B0FD98 /* Localization */,
 				034DECB62C467CDF00D2433F /* Assets.xcassets */,
 				0E01D9FF2C466B5800AD41FE /* EndxietyApp.swift */,
 				0E01DA012C466B5800AD41FE /* ContentView.swift */,
@@ -272,6 +280,7 @@
 			knownRegions = (
 				en,
 				Base,
+				id,
 			);
 			mainGroup = 0E01D9F32C466B5800AD41FE;
 			productRefGroup = 0E01D9FD2C466B5800AD41FE /* Products */;
@@ -392,6 +401,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -448,6 +458,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

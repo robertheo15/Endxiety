@@ -178,6 +178,9 @@ struct NoteCalendarView: View {
             TextOrVoiceView(showingSheet: $showingSheet, note: $selectedNote)
                 .presentationDragIndicator(.visible)
         }
+        .navigationDestination(isPresented: $navigateToNewNote){
+            NoteView(note: $selectedNote)
+        }
         .padding()
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .background(RoundedRectangle(cornerRadius: 20)
