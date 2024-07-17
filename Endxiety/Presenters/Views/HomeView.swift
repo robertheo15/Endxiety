@@ -11,6 +11,8 @@ import SwiftData
 struct HomeView: View {
     @State var isEmpty = true
     @State private var showReminderSheet = false
+    @State private var isReminderEnabled: Bool = false
+
     
     let dates = (0..<8).map { index in
         let date = Date().addingTimeInterval(-Double(index) * 24 * 60 * 60)
@@ -59,7 +61,7 @@ struct HomeView: View {
                             }
                             .sheet(isPresented: $showReminderSheet) {
                                 VStack {
-                                    Sheet()
+                                    Sheet(showReminderSheet: $showReminderSheet, isReminderEnabled: $isReminderEnabled)
                                 }
                             }
                         }
