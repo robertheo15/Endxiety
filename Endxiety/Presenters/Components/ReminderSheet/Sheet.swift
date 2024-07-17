@@ -10,9 +10,14 @@ import UserNotifications
 
 
 struct Sheet: View {
-    @State private var isReminderEnabled = false
+    @Binding var showReminderSheet: Bool
+
+    @Binding var isReminderEnabled: Bool
+//    @State var isReminderEnabled: Bool = false
     @State private var reminderTime = Date()
     var dateComponents = DateComponents()
+    let content = UNMutableNotificationContent()
+
 
     var body: some View {
         NavigationView {
@@ -31,10 +36,14 @@ struct Sheet: View {
                                     print(error.localizedDescription)
                                 }
                             }
+                            if content.threadIdentifier.isEmpty {
+                                print("ThreadIdentifier is not set")
+                            }
                         }
-                        
                     }
-
+                    
+                   
+                    
                     if isReminderEnabled {
                         DatePicker("Reminds Me At", selection: $reminderTime, displayedComponents: .hourAndMinute)
                     }
@@ -45,7 +54,6 @@ struct Sheet: View {
                 print("halo!")
 
                 // Add any actions to perform when done
-                let content = UNMutableNotificationContent()
                 content.title = "Feed the cat"
                 content.subtitle = "It looks hungry"
                 content.sound = UNNotificationSound.defaultRingtone
@@ -62,12 +70,14 @@ struct Sheet: View {
 
                 UNUserNotificationCenter.current().add(request)
                 print("notification set!")
-            
+                showReminderSheet = false
+                
             })
         }
     }
 }
 
-#Preview {
-    Sheet()
-}
+//#Preview {
+//    @state var showReminderSheet: Bool = false
+//    Sheet(showReminderSheet: $showReminderSheet)
+//}

@@ -15,6 +15,7 @@ final class Note: Identifiable {
     var fileURL : URL
     var emotion: String
     var editedAt: Date
+//    isNote true
     
     init(id: UUID = UUID(), content: String, fileURL: URL, emotion: String, editedAt: Date = Date()) {
         self.id = id
