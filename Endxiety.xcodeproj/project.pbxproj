@@ -33,6 +33,9 @@
 		0E01DA452C466BED00AD41FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E01DA442C466BED00AD41FE /* Assets.xcassets */; };
 		0E01DA472C466CA100AD41FE /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA462C466CA100AD41FE /* Recording.swift */; };
 		0E01DA4A2C4670D000AD41FE /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA492C4670D000AD41FE /* Sheet.swift */; };
+		28FDEDFB2C477EB40049957A /* QuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FDEDFA2C477EB40049957A /* QuoteViewModel.swift */; };
+		28FDEDFD2C477EE80049957A /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FDEDFC2C477EE80049957A /* Quote.swift */; };
+		28FDEE002C477F230049957A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FDEDFF2C477F230049957A /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,9 @@
 		0E01DA442C466BED00AD41FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../NoteApp/NoteApp/NoteApp/Assets.xcassets; sourceTree = "<group>"; };
 		0E01DA462C466CA100AD41FE /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		0E01DA492C4670D000AD41FE /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
+		28FDEDFA2C477EB40049957A /* QuoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewModel.swift; sourceTree = "<group>"; };
+		28FDEDFC2C477EE80049957A /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		28FDEDFF2C477F230049957A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 			children = (
 				0E01D9FF2C466B5800AD41FE /* EndxietyApp.swift */,
 				0E01DA012C466B5800AD41FE /* ContentView.swift */,
+				28FDEDFE2C477F140049957A /* Services */,
 				0E01DA132C466BE300AD41FE /* Configs */,
 				0E01DA112C466BE300AD41FE /* Models */,
 				0E01DA2C2C466BE300AD41FE /* Presenters */,
@@ -119,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				0E01DA0E2C466BE300AD41FE /* VoiceViewModel.swift */,
+				28FDEDFA2C477EB40049957A /* QuoteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -127,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				0E01DA462C466CA100AD41FE /* Recording.swift */,
+				28FDEDFC2C477EE80049957A /* Quote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -213,6 +222,14 @@
 			path = ReminderSheet;
 			sourceTree = "<group>";
 		};
+		28FDEDFE2C477F140049957A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				28FDEDFF2C477F230049957A /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -284,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28FDEE002C477F230049957A /* APIService.swift in Sources */,
 				0E01DA3B2C466BE300AD41FE /* EmotionRateView.swift in Sources */,
 				0E01DA3C2C466BE300AD41FE /* HomeView.swift in Sources */,
 				0E01DA2E2C466BE300AD41FE /* VoiceViewModel.swift in Sources */,
@@ -293,6 +311,7 @@
 				0E01DA022C466B5800AD41FE /* ContentView.swift in Sources */,
 				0E01DA322C466BE300AD41FE /* RippleEffectModifier.swift in Sources */,
 				0E01DA372C466BE300AD41FE /* convertSecToMinAndHour.swift in Sources */,
+				28FDEDFB2C477EB40049957A /* QuoteViewModel.swift in Sources */,
 				0E01DA3F2C466BE300AD41FE /* QuoteView.swift in Sources */,
 				0E01DA4A2C4670D000AD41FE /* Sheet.swift in Sources */,
 				0E01DA422C466BE300AD41FE /* TrendsView.swift in Sources */,
@@ -306,6 +325,7 @@
 				0E01DA392C466BE300AD41FE /* TextView.swift in Sources */,
 				0E01DA312C466BE300AD41FE /* RippleEffect.metal in Sources */,
 				0E01DA3D2C466BE300AD41FE /* MainView.swift in Sources */,
+				28FDEDFD2C477EE80049957A /* Quote.swift in Sources */,
 				0E01DA342C466BE300AD41FE /* MeshGradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,7 +460,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Endxiety/Preview Content\"";
-				DEVELOPMENT_TEAM = 5KGT723N95;
+				DEVELOPMENT_TEAM = 376838STBY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -469,7 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Endxiety/Preview Content\"";
-				DEVELOPMENT_TEAM = 5KGT723N95;
+				DEVELOPMENT_TEAM = 376838STBY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
