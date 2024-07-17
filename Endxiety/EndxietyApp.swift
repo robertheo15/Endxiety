@@ -13,7 +13,7 @@ struct NotesAppApp: App {
     
     init() {
         do{
-            modelContainer = try ModelContainer(for: Note.self)
+            modelContainer = try ModelContainer(for: Record.self)
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }

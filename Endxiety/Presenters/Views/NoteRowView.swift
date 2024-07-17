@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NoteRowView: View {
-    let note : Note
+    let note : Record
     
     private var formattedDate: String {
         let formatter = DateFormatter()
@@ -42,6 +42,6 @@ struct NoteRowView: View {
     }
 }
 
-#Preview {
-    NoteRowView(note: Note(content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua", editedAt: Date()))
-}
+//#Preview {
+//    NoteRowView(note: Note(content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua", editedAt: Date()))
+//}

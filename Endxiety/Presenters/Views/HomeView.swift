@@ -11,8 +11,8 @@ import SwiftData
 struct HomeView: View {
     @State var isEmpty = true
     @State private var showReminderSheet = false
-    @Query(sort: \Note.editedAt) var swiftDateNotes: [Note]
-    @State var selectedNote: Note = Note(content: "")
+    @Query(sort: \Record.editedAt) var swiftDateRecords: [Record]
+    @State var selectedNote: Record = Record(createdAt: Date(), isPlaying: false, content: "")
     @Environment(\.modelContext) var context
     @State private var navigateToNewNote = false
 
@@ -75,6 +75,9 @@ struct HomeView: View {
 }
 
 struct NoteCalendarView: View {
+    @Query(sort: \Record.editedAt) var swiftDateRecords: [Record]
+
+    
     @ObservedObject var vm = VoiceViewModel()
     @Binding var isEmpty: Bool
     
@@ -102,7 +105,7 @@ struct NoteCalendarView: View {
                 
                 
                 ScrollView(showsIndicators: false){
-                    ForEach(vm.recordingsList, id: \.id) { recording in
+                    ForEach(vm.records, id: \.id) { record in
                         
                         VStack {
                             HStack{
@@ -123,19 +126,19 @@ struct NoteCalendarView: View {
                                     HStack(spacing: 50){
                                         Spacer()
                                         Button{
-                                            vm.deleteRecording(url:recording.fileURL)
+                                            vm.deleteRecording(url:record.fileURL)
                                         }label: {
                                             Image(systemName: "gobackward.10")
                                         }
                                         Button{
-                                            if recording.isPlaying == true {
-                                                vm.stopPlaying(url: recording.fileURL)
+                                            if record.isPlaying == true {
+                                                vm.stopPlaying(url: record.fileURL)
                                             }else{
-                                                vm.startPlaying(url: recording.fileURL)
+                                                vm.startPlaying(url: record.fileURL)
                                             }
                                         }label: {
 //                                            Image(systemName: "play.fill")
-                                            Image(systemName: recording.isPlaying ? "stop.fill" : "play.fill")
+                                            Image(systemName: record.isPlaying ? "stop.fill" : "play.fill")
                                         }
                                         Button{
                                             
@@ -147,7 +150,7 @@ struct NoteCalendarView: View {
                                     .font(.headline)
                                     .buttonStyle(.plain)
                                     
-                                    Text("Recorded "+"\(recording.createdAt)")
+                                    Text("Recorded "+"\(record.createdAt)")
                                         .font(.footnote)
                                         .foregroundStyle(.secondary)
                                         .padding(.top)
@@ -175,7 +178,9 @@ struct NoteCalendarView: View {
                     } label: {
                         HStack {
                             Image(systemName: "square.and.pencil")
-                            Text("New Entry")
+                            Text("New Entry").onTapGesture {
+                                print(swiftDateRecords.)
+                            }
                             
                         }
                         .foregroundStyle(.black)
