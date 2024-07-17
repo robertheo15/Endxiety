@@ -15,7 +15,7 @@ struct Sheet: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Daily Reminder")) {
+                Section(header: Text("")) {
                     Toggle(isOn: $isReminderEnabled) {
                         HStack {
                             Image(systemName: "alarm.fill")

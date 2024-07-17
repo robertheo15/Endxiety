@@ -72,7 +72,7 @@ struct VoiceRecordView: View {
             }
         .toolbar {
             NavigationLink{
-                EmotionRateView()
+//                EmotionRateView()
             }label: {
                 Image(systemName: "checkmark")
                     .onTapGesture {

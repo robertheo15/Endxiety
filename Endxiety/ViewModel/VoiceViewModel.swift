@@ -95,6 +95,38 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
         }
     }
     
+    func pauseRecording() {
+        audioRecorder.pause()
+        isRecording = false
+        timerCount?.invalidate()
+        blinkingCount?.invalidate()
+    }
+    
+    func unpauseRecording() {
+        audioRecorder.record()
+        isRecording = true
+        timerCount = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self] _ in
+            self?.updateAudioInputLevel()
+        })
+        timerCount = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (value) in
+            self.countSec += 1
+            self.timer = self.covertSecToMinAndHour(seconds: self.countSec)
+        })
+        blinkColor()
+    }
+    
+    func pausePlaying(url: URL) {
+        audioPlayer?.pause()
+        timeR?.invalidate()
+        timeR = nil
+        
+        for i in 0..<recordingsList.count {
+            if recordingsList[i].fileURL == url {
+                recordingsList[i].isPlaying = false
+            }
+        }
+    }
+    
     func updateAudioInputLevel() {
         audioRecorder.updateMeters()
         let averagePower = audioRecorder.averagePower(forChannel: 0)

@@ -15,15 +15,18 @@ struct MainView: View {
                 .tabItem {
                     Label("My Notes", systemImage: "note.text")
                 }
-            TrendsView()
+            CalendarView()
                 .tabItem {
-                    Label("Trends", systemImage: "chart.bar.xaxis")
+                    Label("Calendar", systemImage: "calendar")
                 }
-            SettingsView()
+            InsightView()
                 .tabItem {
-                    Label("Settings", systemImage: "gear")
+                    Label("Insight", systemImage: "chart.bar.xaxis")
                 }
-        }.navigationBarBackButtonHidden()
+        }
+        .accentColor(.primaryBlue)
+        .navigationBarBackButtonHidden()
+            
           
     }
 }
