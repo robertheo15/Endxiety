@@ -9,6 +9,7 @@ import SwiftUI
 
 struct VoiceRecordView: View {
     @ObservedObject var vm = VoiceViewModel()
+    @Binding var note: Note
     
     @State private var animationScale: CGFloat = 1.0
     
@@ -54,6 +55,7 @@ struct VoiceRecordView: View {
             Button{
                 if vm.isRecording {
                     vm.stopRecording()
+                    note.fileURL = vm.playingURL!
                 }else{
                     vm.startRecording()
                 }
@@ -72,7 +74,7 @@ struct VoiceRecordView: View {
             }
         .toolbar {
             NavigationLink{
-//                EmotionRateView()
+                EmotionRateView(note: $note)
             }label: {
                 Image(systemName: "checkmark")
                     .onTapGesture {
@@ -85,8 +87,8 @@ struct VoiceRecordView: View {
     }
 }
 
-#Preview {
-    VoiceRecordView()
-}
+//#Preview {
+//    VoiceRecordView()
+//}
 
 
