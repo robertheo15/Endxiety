@@ -20,7 +20,6 @@
 		0E01DA372C466BE300AD41FE /* convertSecToMinAndHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA1D2C466BE300AD41FE /* convertSecToMinAndHour.swift */; };
 		0E01DA382C466BE300AD41FE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA1E2C466BE300AD41FE /* Date.swift */; };
 		0E01DA392C466BE300AD41FE /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA1F2C466BE300AD41FE /* TextView.swift */; };
-		0E01DA3A2C466BE300AD41FE /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 0E01DA212C466BE300AD41FE /* .gitkeep */; };
 		0E01DA3B2C466BE300AD41FE /* EmotionRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA222C466BE300AD41FE /* EmotionRateView.swift */; };
 		0E01DA3C2C466BE300AD41FE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA232C466BE300AD41FE /* HomeView.swift */; };
 		0E01DA3D2C466BE300AD41FE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA242C466BE300AD41FE /* MainView.swift */; };
@@ -31,9 +30,8 @@
 		0E01DA422C466BE300AD41FE /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA292C466BE300AD41FE /* TrendsView.swift */; };
 		0E01DA432C466BE300AD41FE /* VoiceRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA2A2C466BE300AD41FE /* VoiceRecordView.swift */; };
 		0E01DA452C466BED00AD41FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E01DA442C466BED00AD41FE /* Assets.xcassets */; };
-		0E01DA472C466CA100AD41FE /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA462C466CA100AD41FE /* Recording.swift */; };
+		0E01DA472C466CA100AD41FE /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA462C466CA100AD41FE /* Record.swift */; };
 		0E01DA4A2C4670D000AD41FE /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA492C4670D000AD41FE /* Sheet.swift */; };
-		4682C1FD2C46897D00C4FF35 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4682C1FC2C46897D00C4FF35 /* Note.swift */; };
 		4682C1FF2C4689CA00C4FF35 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4682C1FE2C4689CA00C4FF35 /* NoteViewModel.swift */; };
 		4682C2012C468AF400C4FF35 /* NoteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4682C2002C468AF400C4FF35 /* NoteRowView.swift */; };
 /* End PBXBuildFile section */
@@ -53,7 +51,6 @@
 		0E01DA1D2C466BE300AD41FE /* convertSecToMinAndHour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = convertSecToMinAndHour.swift; sourceTree = "<group>"; };
 		0E01DA1E2C466BE300AD41FE /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		0E01DA1F2C466BE300AD41FE /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
-		0E01DA212C466BE300AD41FE /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		0E01DA222C466BE300AD41FE /* EmotionRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionRateView.swift; sourceTree = "<group>"; };
 		0E01DA232C466BE300AD41FE /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0E01DA242C466BE300AD41FE /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -64,9 +61,8 @@
 		0E01DA292C466BE300AD41FE /* TrendsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
 		0E01DA2A2C466BE300AD41FE /* VoiceRecordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceRecordView.swift; sourceTree = "<group>"; };
 		0E01DA442C466BED00AD41FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../NoteApp/NoteApp/NoteApp/Assets.xcassets; sourceTree = "<group>"; };
-		0E01DA462C466CA100AD41FE /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
+		0E01DA462C466CA100AD41FE /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		0E01DA492C4670D000AD41FE /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
-		4682C1FC2C46897D00C4FF35 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		4682C1FE2C4689CA00C4FF35 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 		4682C2002C468AF400C4FF35 /* NoteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,8 +129,7 @@
 		0E01DA112C466BE300AD41FE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0E01DA462C466CA100AD41FE /* Recording.swift */,
-				4682C1FC2C46897D00C4FF35 /* Note.swift */,
+				0E01DA462C466CA100AD41FE /* Record.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,7 +185,6 @@
 		0E01DA2B2C466BE300AD41FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0E01DA212C466BE300AD41FE /* .gitkeep */,
 				0E01DA222C466BE300AD41FE /* EmotionRateView.swift */,
 				0E01DA232C466BE300AD41FE /* HomeView.swift */,
 				0E01DA242C466BE300AD41FE /* MainView.swift */,
@@ -281,7 +275,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E01DA072C466B5900AD41FE /* Preview Assets.xcassets in Resources */,
-				0E01DA3A2C466BE300AD41FE /* .gitkeep in Resources */,
 				0E01DA452C466BED00AD41FE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,10 +297,9 @@
 				0E01DA372C466BE300AD41FE /* convertSecToMinAndHour.swift in Sources */,
 				0E01DA3F2C466BE300AD41FE /* QuoteView.swift in Sources */,
 				0E01DA4A2C4670D000AD41FE /* Sheet.swift in Sources */,
-				4682C1FD2C46897D00C4FF35 /* Note.swift in Sources */,
 				0E01DA422C466BE300AD41FE /* TrendsView.swift in Sources */,
 				4682C2012C468AF400C4FF35 /* NoteRowView.swift in Sources */,
-				0E01DA472C466CA100AD41FE /* Recording.swift in Sources */,
+				0E01DA472C466CA100AD41FE /* Record.swift in Sources */,
 				0E01DA352C466BE300AD41FE /* ListeningSiriAnimation.swift in Sources */,
 				4682C1FF2C4689CA00C4FF35 /* NoteViewModel.swift in Sources */,
 				0E01DA432C466BE300AD41FE /* VoiceRecordView.swift in Sources */,
@@ -452,7 +444,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Endxiety/Preview Content\"";
-				DEVELOPMENT_TEAM = 5H49J96R9T;
+				DEVELOPMENT_TEAM = 5KGT723N95;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -481,7 +473,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Endxiety/Preview Content\"";
-				DEVELOPMENT_TEAM = 5H49J96R9T;
+				DEVELOPMENT_TEAM = 5KGT723N95;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

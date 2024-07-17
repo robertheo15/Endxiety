@@ -17,7 +17,7 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
     
     @Published var isRecording : Bool = false
     
-    @Published var recordingsList = [Recording]()
+    @Published var records = [Record]()
     
     @Published var countSec = 0
     @Published var timerCount : Timer?
@@ -39,9 +39,9 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         
-        for i in 0..<recordingsList.count {
-            if recordingsList[i].fileURL == playingURL {
-                recordingsList[i].isPlaying = false
+        for i in 0..<records.count {
+            if records[i].fileURL == playingURL {
+                records[i].isPlaying = false
             }
         }
     }
@@ -121,10 +121,10 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
         let directoryContents = try! FileManager.default.contentsOfDirectory(at: path, includingPropertiesForKeys: nil)
         
         for i in directoryContents {
-            recordingsList.append(Recording(fileURL : i, createdAt:getFileDate(for: i), isPlaying: false))
+            records.append(Record(fileURL : i, createdAt:getFileDate(for: i), isPlaying: false, content: ""))
         }
         
-        recordingsList.sort(by: { $0.createdAt.compare($1.createdAt) == .orderedDescending})
+        records.sort(by: { $0.createdAt.compare($1.createdAt) == .orderedDescending})
         
     }
     
@@ -154,9 +154,9 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
                 }
             }
             
-            for i in 0..<recordingsList.count {
-                if recordingsList[i].fileURL == url {
-                    recordingsList[i].isPlaying = true
+            for i in 0..<records.count {
+                if records[i].fileURL == url {
+                    records[i].isPlaying = true
                 }
             }
             
@@ -174,9 +174,9 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
         timeR = nil
         audioPlayer = nil
         
-        for i in 0..<recordingsList.count {
-            if recordingsList[i].fileURL == url {
-                recordingsList[i].isPlaying = false
+        for i in 0..<records.count {
+            if records[i].fileURL == url {
+                records[i].isPlaying = false
             }
         }
     }
@@ -195,13 +195,13 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
             print("Can't delete")
         }
         
-        for i in 0..<recordingsList.count {
+        for i in 0..<records.count {
             
-            if recordingsList[i].fileURL == url {
-                if recordingsList[i].isPlaying == true{
-                    stopPlaying(url: recordingsList[i].fileURL)
+            if records[i].fileURL == url {
+                if records[i].isPlaying == true{
+                    stopPlaying(url: records[i].fileURL)
                 }
-                recordingsList.remove(at: i)
+                records.remove(at: i)
                 
                 break
             }

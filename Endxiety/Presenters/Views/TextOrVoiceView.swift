@@ -10,12 +10,12 @@ import SwiftData
 
 struct TextOrVoiceView: View {
     
-    @State var selectedNote: Note = Note(content: "")
-    
+    @State var selectedRecord: Record = Record(createdAt: Date(), isPlaying: false, content: "")
+
     var body: some View {
         VStack{
             NavigationLink{
-                NoteView(note:$selectedNote)
+                NoteView(record: $selectedRecord)
             } label: {
                 Image(systemName: "note.text")
                     .font(.largeTitle)

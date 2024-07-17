@@ -13,18 +13,18 @@ struct MainView: View {
         TabView{
             HomeView()
                 .tabItem {
-                    Label("My Notes", systemImage: "note.text")
+                    Label("My Notes", systemImage: "pencil.line")
                 }
             TrendsView()
                 .tabItem {
-                    Label("Trends", systemImage: "chart.bar.xaxis")
+                    Label("Calendar", systemImage: "calendar")
                 }
             SettingsView()
                 .tabItem {
-                    Label("Settings", systemImage: "gear")
+                    Label("Insights", systemImage: "chart.bar.xaxis")
                 }
-        }.navigationBarBackButtonHidden()
-          
+        }
+        .navigationBarBackButtonHidden()
     }
 }
 

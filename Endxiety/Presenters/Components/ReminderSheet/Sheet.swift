@@ -17,11 +17,20 @@ struct Sheet: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("")) {
+                Section(header:
+                            Text("Set daily reminders at your preferred time to ensure a consistent writing habit.")
+                    .textCase(.none)
+                    .font(.system(size: 16))
+                    .padding(.bottom)
+                ) {
                     Toggle(isOn: $isReminderEnabled) {
                         HStack {
                             Image(systemName: "alarm.fill")
-                                .foregroundColor(.orange)
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(.white)
+                                .background(.orange)
+                                .clipShape(RoundedRectangle(cornerRadius: 5))
+                                
                             Text("Daily Reminder")
                         }.onAppear() {
                             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in

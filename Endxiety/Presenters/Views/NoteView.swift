@@ -19,7 +19,7 @@ import SwiftUI
 
 struct NoteView: View {
     @State private var notes: NSMutableAttributedString = NSMutableAttributedString(string: "")
-    @Binding var note: Note
+    @Binding var record: Record
     @FocusState private var isDescriptionFocused: Bool
     @Environment(\.modelContext) var context
     @Environment(\.dismiss) private var dismiss
@@ -81,13 +81,54 @@ struct NoteView: View {
                 Spacer()
             }
         }.toolbar {
-            NavigationLink{
+            //            NavigationLink(destination: EmotionRateView()) {
+            //                HStack {
+            //                    if (!record.content.isEmpty) {
+            //                        Button(action: {
+            //                            record.editedAt = Date.now
+            //                            context.insert(record)
+            //                        }) {
+            //                            Image(systemName: "checkmark")
+            //                        }
+            //                    }
+            //
+            //                }
+            //            }
+            
+            //            NavigationView {
+            //                        VStack {
+            //                            NavigationLink(destination: EmotionRateView()) {
+            //                                HStack {
+            //                                    Image(systemName: "checkmark")
+            //                                }
+            //                                .onTapGesture {
+            //                                    if !record.content.isEmpty {
+            //                                        record.editedAt = Date()
+            //                                        context.insert(record)
+            //                                        print("halo")
+            //                                    }
+            //                                }
+            //                            }
+            //                        }
+            //                    }
+            //
+            
+            NavigationLink {
                 EmotionRateView()
-            }label: {
-                Image(systemName: "checkmark")
+            } label: {
+                Image(systemName: "checkmark").onTapGesture {
+                    print("checkmarktapped")
+                    print(record.content)
+                    if (record.content != "") {
+                        record.editedAt = Date.now
+                        context.insert(record)
+                        print("saved")
+                    }
+                }
             }
         }
     }
+    
     
     
     private func applyBoldFormatting() {
@@ -114,6 +155,13 @@ struct NoteView: View {
     }
 }
 
-#Preview {
-    NoteView(note: .constant(Note(content: "", editedAt: Date())))
-}
+//#Preview {
+//    NoteView(note: .constant(Record(
+//                
+        //id: UUID(),
+        //fileURL: <#T##URL#>(string: "")
+        //editedAt: Date(),
+        //createdAt: Date()
+//        )
+//    )
+//}
