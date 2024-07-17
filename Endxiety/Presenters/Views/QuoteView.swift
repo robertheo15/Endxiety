@@ -9,9 +9,9 @@ import SwiftUI
 
 struct QuoteView: View {
     var body: some View {
-        NavigationLink {
-            MainView().navigationTitle(LocalizedStringKey("My Notes"))
-        }label: {
+//        NavigationLink {
+//            MainView().navigationTitle(LocalizedStringKey("My Notes"))
+//        }label: {
             VStack(spacing:20){
                 Spacer()
                 Text("\"\nRemember, licking doorknobs is illegal on other planets.\"")
@@ -21,10 +21,11 @@ struct QuoteView: View {
                     .bold()
                 
                 Spacer()
-                Text("Tap anywhere to exit")
+                Text("Swipe down to exit")
                 
             }.foregroundStyle(.primary).padding(50)
-        }.navigationBarBackButtonHidden()
+//        }
+        .navigationBarBackButtonHidden()
             
     }
 }
