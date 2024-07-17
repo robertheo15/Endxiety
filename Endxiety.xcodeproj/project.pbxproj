@@ -34,7 +34,6 @@
 		0E01DA3F2C466BE300AD41FE /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA262C466BE300AD41FE /* QuoteView.swift */; };
 		0E01DA412C466BE300AD41FE /* TextOrVoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA282C466BE300AD41FE /* TextOrVoiceView.swift */; };
 		0E01DA432C466BE300AD41FE /* VoiceRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA2A2C466BE300AD41FE /* VoiceRecordView.swift */; };
-		0E01DA472C466CA100AD41FE /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA462C466CA100AD41FE /* Recording.swift */; };
 		0E01DA4A2C4670D000AD41FE /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E01DA492C4670D000AD41FE /* Sheet.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +66,6 @@
 		0E01DA262C466BE300AD41FE /* QuoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		0E01DA282C466BE300AD41FE /* TextOrVoiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextOrVoiceView.swift; sourceTree = "<group>"; };
 		0E01DA2A2C466BE300AD41FE /* VoiceRecordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceRecordView.swift; sourceTree = "<group>"; };
-		0E01DA462C466CA100AD41FE /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		0E01DA492C4670D000AD41FE /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				034DECB82C473AB100D2433F /* Note.swift */,
-				0E01DA462C466CA100AD41FE /* Recording.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -322,7 +319,6 @@
 				0E01DA3F2C466BE300AD41FE /* QuoteView.swift in Sources */,
 				0E01DA4A2C4670D000AD41FE /* Sheet.swift in Sources */,
 				034DECB92C473AB100D2433F /* Note.swift in Sources */,
-				0E01DA472C466CA100AD41FE /* Recording.swift in Sources */,
 				0E01DA352C466BE300AD41FE /* ListeningSiriAnimation.swift in Sources */,
 				0E01DA432C466BE300AD41FE /* VoiceRecordView.swift in Sources */,
 				034DECC22C47409500D2433F /* Date+Extension.swift in Sources */,

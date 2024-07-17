@@ -55,7 +55,6 @@ struct VoiceRecordView: View {
             Button{
                 if vm.isRecording {
                     vm.stopRecording()
-                    note.fileURL = vm.playingURL!
                 }else{
                     vm.startRecording()
                 }
@@ -78,9 +77,9 @@ struct VoiceRecordView: View {
             }label: {
                 Image(systemName: "checkmark")
                     .onTapGesture {
-                        
-                            vm.fetchAllRecording()
-                        
+                        vm.fetchAllRecording()
+//                        note.fileURL = vm.playingURL!
+                        note.editedAt = Date.now
                     }
             }
         }

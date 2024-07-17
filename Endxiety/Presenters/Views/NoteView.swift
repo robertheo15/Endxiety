@@ -98,5 +98,5 @@ struct NoteView: View {
 }
 
 #Preview {
-    NoteView(note: .constant(Note(content: "", fileURL: URL(filePath: ""), emotion: "")))
+    NoteView(note: .constant(Note(content: "", fileURL: URL(filePath: ""), emotion: "", isPlaying: false)))
 }

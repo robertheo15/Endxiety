@@ -28,6 +28,9 @@ struct EmotionRateView: View {
                             self.selectedEmojiIndex = index
                         }) {
                             Image(arrEmoji[index])
+                                .resizable()
+                                .interpolation(.none)
+                                .frame(width: UIScreen.main.bounds.width / 1.2, height: UIScreen.main.bounds.width / 1.2)
                                 .background(self.selectedEmojiIndex == index ? Circle().fill(Color.blue) : Circle().fill(Color.gray))
                                 .containerRelativeFrame(.horizontal, count: 1, spacing: 16)
                         }
@@ -75,5 +78,5 @@ struct EmotionRateView: View {
 }
 
 #Preview {
-    EmotionRateView(note: .constant(Note(content: "", fileURL: URL(filePath: ""), emotion: "")))
+    EmotionRateView(note: .constant(Note(content: "", fileURL: URL(filePath: ""), emotion: "", isPlaying: false)))
 }

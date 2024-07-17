@@ -17,7 +17,7 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
     
     @Published var isRecording : Bool = false
     
-    @Published var recordingsList = [Recording]()
+    @Published var recordingsList = [Note]()
     
     @Published var countSec = 0
     @Published var timerCount : Timer?
@@ -143,7 +143,6 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
         
         timerCount!.invalidate()
         blinkingCount!.invalidate()
-        
     }
     
     
@@ -153,10 +152,10 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
         let directoryContents = try! FileManager.default.contentsOfDirectory(at: path, includingPropertiesForKeys: nil)
         
         for i in directoryContents {
-            recordingsList.append(Recording(fileURL : i, createdAt:getFileDate(for: i), isPlaying: false))
+            recordingsList.append(Note(content: "", fileURL : i, emotion: "", editedAt:getFileDate(for: i), isPlaying: false))
         }
         
-        recordingsList.sort(by: { $0.createdAt.compare($1.createdAt) == .orderedDescending})
+        recordingsList.sort(by: { $0.editedAt.compare($1.editedAt) == .orderedDescending})
         
     }
     

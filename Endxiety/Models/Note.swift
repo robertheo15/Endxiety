@@ -15,12 +15,14 @@ final class Note: Identifiable {
     var fileURL : URL
     var emotion: String
     var editedAt: Date
+    var isPlaying : Bool
     
-    init(id: UUID = UUID(), content: String, fileURL: URL, emotion: String, editedAt: Date = Date()) {
+    init(id: UUID = UUID(), content: String, fileURL: URL, emotion: String, editedAt: Date = Date(), isPlaying: Bool) {
         self.id = id
         self.content = content
         self.fileURL = fileURL
         self.emotion = emotion
         self.editedAt = editedAt
+        self.isPlaying = isPlaying
     }
 }

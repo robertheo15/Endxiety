@@ -37,7 +37,7 @@ struct TextOrVoiceView: View {
                     .bold()
                 
                 NavigationLink{
-                    VoiceRecordView()
+                    VoiceRecordView(note: $note)
                 } label: {
                     Image("record_il")
                         .resizable()

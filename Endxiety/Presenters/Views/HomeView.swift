@@ -80,7 +80,7 @@ struct HomeView: View {
 struct NoteCalendarView: View {
     
     @Query(sort: \Note.editedAt) var swiftDateNotes: [Note]
-    @State var selectedNote: Note = Note(content: "", fileURL: URL(filePath: "")!, emotion: "")
+    @State var selectedNote: Note = Note(content: "", fileURL: URL(filePath: "")!, emotion: "", isPlaying: false)
     @Environment(\.modelContext) var context
     @State private var navigateToNewNote = false
     
@@ -112,30 +112,36 @@ struct NoteCalendarView: View {
                 
                 
                 ScrollView(showsIndicators: false){
-//                    ForEach(vm.recordingsList, id: \.id) { recording in
-//                        
-//                        RecordingItemView(vm: vm, recording: recording)
-//                        
-//                    }
-//                    
-//                }.padding(.top, 10)
-                
-//                List {
+                    //                    ForEach(vm.recordingsList, id: \.id) { recording in
+                    //
+                    //                        RecordingItemView(vm: vm, recording: recording)
+                    //
+                    //                    }
+                    //
+                    //                }.padding(.top, 10)
+                    
+                    //                List {
                     ForEach(swiftDateNotes.filter{ $0.editedAt.formatted(date: .abbreviated, time: .omitted) == date }) { note in
-                        NoteRow(note: note)
-                            .onTapGesture {
-                                selectedNote = note
-                                navigateToNewNote = true
-                            }
-                            .contextMenu {
-                                Button(role: .destructive) {
-                                    context.delete(note)
-                                } label: {
-                                    Image(systemName: "trash")
-                                    Label("Delete", systemImage: "trash")
+                        if note.content != "" {
+                            
+                            NoteRow(note: note)
+                                .onTapGesture {
+                                    selectedNote = note
+                                    navigateToNewNote = true
                                 }
-                            }
-                            .listRowInsets(EdgeInsets())
+                                .contextMenu {
+                                    Button(role: .destructive) {
+                                        context.delete(note)
+                                    } label: {
+                                        Image(systemName: "trash")
+                                        Label("Delete", systemImage: "trash")
+                                    }
+                                }
+                                .listRowInsets(EdgeInsets())
+                        }else{
+                            RecordingItemView(vm: vm, recording: note)
+                        }
+                        
                     }
                 }
                 .padding(.top, 10)
@@ -156,9 +162,9 @@ struct NoteCalendarView: View {
                 HStack {
                     Spacer()
                     Button {
-                        selectedNote = Note(content: "", fileURL: URL(filePath: ""), emotion: "")
+                        selectedNote = Note(content: "", fileURL: URL(filePath: ""), emotion: "", isPlaying: false)
                         showingSheet.toggle()
-                            
+                        
                     } label: {
                         HStack {
                             Image(systemName: "square.and.pencil")
@@ -227,25 +233,27 @@ struct NoteRow: View {
                 .overlay(Color(.primaryBlue))
         }
         .frame(maxWidth: .infinity)
-//            .background(
-////                RoundedRectangle(cornerRadius: 12)
-////                    .fill(.notesBackground)
-////                    .stroke(.black)
-//            )
     }
 }
 
 
 struct RecordingItemView: View {
     @ObservedObject var vm: VoiceViewModel
-    var recording: Recording
+    var recording: Note
+    
+    private var formattedDate: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yy HH:mm"
+        return formatter.string(from: recording.editedAt)
+    }
     
     var body: some View {
         VStack {
             HStack{
-                Image("Annoyed")
+                Image(recording.emotion)
                     .resizable()
-                    .frame(width: 80, height: 80)
+                    .frame(width: 65, height: 65)
+                    .padding()
                 
                 VStack (alignment: .leading){
                     
@@ -284,10 +292,9 @@ struct RecordingItemView: View {
                     .font(.headline)
                     .buttonStyle(.plain)
                     
-                    Text("Recorded "+"\(recording.createdAt)")
-                        .font(.footnote)
-                        .foregroundStyle(.secondary)
-                        .padding(.top)
+                    
+                    Text("Recorded " + formattedDate)
+                        .font(.system(size: 10))
                 }
             }
             Divider()
