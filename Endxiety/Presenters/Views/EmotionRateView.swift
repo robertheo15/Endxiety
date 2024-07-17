@@ -50,27 +50,27 @@ struct EmotionRateView: View {
                     QuoteView()
                 }label: {
                     Image(systemName: "checkmark")
-                        .onTapGesture {
-                            if (!note.content.isEmpty){
-                                note.editedAt = Date.now
-                                switch selectedEmojiIndex{
-                                    case 0:
-                                        note.emotion = "SuperAnxious"
-                                    case 1:
-                                        note.emotion = "Anxious"
-                                    case 2:
-                                        note.emotion = "Annoyed"
-                                    case 3:
-                                        note.emotion = "Tense"
-                                    case 4:
-                                        note.emotion = "Calm"
-                                default:
-                                    break
-                                }
-                                context.insert(note)
-                            }
+//                        .onTapGesture {
+//                            if (!note.content.isEmpty){
+//                                note.editedAt = Date.now
+//                                switch selectedEmojiIndex{
+//                                    case 0:
+//                                        note.emotion = "SuperAnxious"
+//                                    case 1:
+//                                        note.emotion = "Anxious"
+//                                    case 2:
+//                                        note.emotion = "Annoyed"
+//                                    case 3:
+//                                        note.emotion = "Tense"
+//                                    case 4:
+//                                        note.emotion = "Calm"
+//                                default:
+//                                    break
+//                                }
+//                                context.insert(note)
+//                            }
 //                            dismiss()
-                        }
+//                        }
                 }
             }
         }

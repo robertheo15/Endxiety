@@ -82,7 +82,7 @@ struct HomeView: View {
 struct NoteCalendarView: View {
     
     @Query(sort: \Note.editedAt) var swiftDateNotes: [Note]
-    @State var selectedNote: Note = Note(content: "", fileURL: URL(filePath: "")!, emotion: "", isPlaying: false)
+    @State var selectedNote: Note = Note(content: "", fileURL: URL(filePath: ""), emotion: "", isPlaying: false)
     @Environment(\.modelContext) var context
     @State private var navigateToNewNote = false
     
