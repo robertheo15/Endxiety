@@ -38,6 +38,7 @@
 		0E6634E82C47C7B800E3C567 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6634E72C47C7B800E3C567 /* Quote.swift */; };
 		0E6634EB2C47C80800E3C567 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6634EA2C47C80800E3C567 /* APIService.swift */; };
 		0E6634EE2C47C82300E3C567 /* QuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6634ED2C47C82300E3C567 /* QuoteViewModel.swift */; };
+		464965552C48EBF900BE16A6 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 464965542C48EBF900BE16A6 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		0E6634E72C47C7B800E3C567 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		0E6634EA2C47C80800E3C567 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		0E6634ED2C47C82300E3C567 /* QuoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewModel.swift; sourceTree = "<group>"; };
+		464965542C48EBF900BE16A6 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,13 +88,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		030662522C478FFC00B0FD98 /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Localization;
-			sourceTree = "<group>";
-		};
 		034DECC02C47408700D2433F /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +116,7 @@
 		0E01D9FE2C466B5800AD41FE /* Endxiety */ = {
 			isa = PBXGroup;
 			children = (
-				030662522C478FFC00B0FD98 /* Localization */,
+				464965532C48EBEB00BE16A6 /* Localization */,
 				034DECB62C467CDF00D2433F /* Assets.xcassets */,
 				0E01D9FF2C466B5800AD41FE /* EndxietyApp.swift */,
 				0E01DA012C466B5800AD41FE /* ContentView.swift */,
@@ -252,6 +247,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		464965532C48EBEB00BE16A6 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				464965542C48EBF900BE16A6 /* Localizable.xcstrings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -295,6 +298,8 @@
 				en,
 				Base,
 				id,
+				ar,
+				"zh-Hans",
 			);
 			mainGroup = 0E01D9F32C466B5800AD41FE;
 			productRefGroup = 0E01D9FD2C466B5800AD41FE /* Products */;
@@ -313,6 +318,7 @@
 			files = (
 				0E01DA072C466B5900AD41FE /* Preview Assets.xcassets in Resources */,
 				034DECB72C467CDF00D2433F /* Assets.xcassets in Resources */,
+				464965552C48EBF900BE16A6 /* Localizable.xcstrings in Resources */,
 				0E01DA3A2C466BE300AD41FE /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,7 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Endxiety/Preview Content\"";
-				DEVELOPMENT_TEAM = 5KGT723N95;
+				DEVELOPMENT_TEAM = 5H49J96R9T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Endxiety;
@@ -522,7 +528,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Endxiety/Preview Content\"";
-				DEVELOPMENT_TEAM = 5KGT723N95;
+				DEVELOPMENT_TEAM = 5H49J96R9T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Endxiety;
